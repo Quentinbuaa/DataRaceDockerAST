@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+# stress:
+#  image: stressor:latest
+#  dns: 
+#   - 192.168.126.2 
+#  deploy:
+#   resources:
+#    limits:
+#     cpus: 0.1
+#     memory: 20M
+ pb:
+  image: pbzip2:latest
+  volumes:
+   - ../logs:/pbzip2/logs
+  dns: 
+   - 192.168.126.2 
+  deploy:
+   resources:
+    limits:
+     cpus: ${cpu_per}
+     memory: ${mem_per}
