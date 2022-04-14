@@ -1,5 +1,5 @@
 #!/bin/bash
-num_replica=1
+num_replica=15
 num_max_rerun=5000
 log_file=logs/ft.log
 
@@ -10,7 +10,7 @@ for replica in $(seq $num_replica)
 do
 	for i in $(seq $num_max_rerun)
 	do
-		./pbzip2 -k -f -p100 ./test.tar # Think wether the 100 afect the result?
+		./pbzip2 -k -f -p3 ./test.tar # Think wether the 100 afect the result?
 		exit=$?
 		if [ $exit -ne 0 ]
 		then
