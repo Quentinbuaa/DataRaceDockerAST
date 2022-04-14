@@ -107,11 +107,10 @@ monitor(){
 	done
 }
 
-#for c in 0.15 0.25 0.35 0.45
-for c in 0.1
+for c in 0.1 0.15 0.2 0.25 0.3 0.35 0.4 0.45
 do 
-	for m in 10M
-	#for m in 15M 10M 20M 12M
+#	for m in 10M
+	for m in 10M 12M 15M 20M 25M
 	do
 		export cpu_per=$c  #This is for docker-compose file (.yml) to configure cpu maximum usage percent.
 		export mem_per=$m  #This is for docker-compose file (.yml) to configure memory maximum limit rss.

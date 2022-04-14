@@ -1,5 +1,5 @@
 #!/bin/bash
-num_replica=15
+num_replica=10
 num_max_rerun=5000
 log_file=logs/ft.log
 
