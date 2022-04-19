@@ -110,7 +110,7 @@ monitor(){
 for c in 0.1 0.15 0.2 0.25 0.3 0.35 0.4 0.45
 do 
 #	for m in 10M
-	for m in 10M 12M 15M 20M 25M
+	for m in 10M 12M 15M 20M 25M 30M
 	do
 		export cpu_per=$c  #This is for docker-compose file (.yml) to configure cpu maximum usage percent.
 		export mem_per=$m  #This is for docker-compose file (.yml) to configure memory maximum limit rss.
@@ -128,7 +128,8 @@ do
 ###########
 
 		ft_log=../logs/ft.log              #../logs is used as a shared volumne with docker pbzip2 container, and ft.log is a file to record the failing time of pbzip2.
-		ft_log_name=../logs/newft_"$cpu_per"_"$mem_per".log
+		ft_prefix=hcft
+		ft_log_name=../logs/"$ft_prefix"_"$cpu_per"_"$mem_per".log
 		if test -f "$ft_log";then 
 			mv $ft_log $ft_log_name
 		fi
